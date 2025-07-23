@@ -35,11 +35,11 @@ msgid "Login"
 msgstr ""
 
 #: templates/frontend/include/login.html:7
-msgid "Access to backend administration stystem or logout"
+msgid "Access to backend administration system or logout"
 msgstr ""
 
 #: templates/frontend/include/login.html:9
-msgid "Login to go backend administration system"
+msgid "Login to go to backend administration system"
 msgstr ""
 
 #: templates/frontend/include/login.html:21
