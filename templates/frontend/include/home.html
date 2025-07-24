@@ -1,48 +1,40 @@
 {% load static %}
 <div id="home_wrapper">
     <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 home">
-      <div class="home-block">
-        <div class="subtitle">{{ generaldata.sub_title }}</div>
-        <h1 class="tk-source-sans-pro">{{ generaldata.title }}</h1>
-        <div class="home-content">
-            {% if generaldata.suite_logo %}
-            {% if generaldata.url_suite_logo %}
-            <a href="{{ generaldata.url_suite_logo }}" target="_blank">
-            {% endif %}
-            <img src="{{ MEDIA_URL }}{{ generaldata.suite_logo }}" alt="logo"><br>
-            {% if generaldata.url_suite_logo %}
-            </a>
-            {% endif %}
-            {% endif %}
-
-          <br><br>
-         <p>{{ generaldata.home_description|safe }}
-             {% if home_image.author %}
-             <br><br>
-             Photo by
-             {% if home_image.author_url %}
-             <a href="{{ home_image.author_url }}">
-             {% endif %}
-                 {{ home_image.author }}
-             {% if home_image.author_url %}
-             </a>
-             {% endif %}
-             {% endif %}
-         </p>
-        {% if powerd_by %}
-         <p>
-             <a href="http://gis3w.it"><img style="float:right;" src="{% static 'frontend/images/logo_gis3w.png' %}"></a><span style="float:right; margin-right: 4px;">Powerd by</span></span>
-         </p>
-        {% endif %}
-         <!--
-          <form>
-            <input type="search" name="s" placeholder="Search this site">
-          </form>
-          -->
+        <div class="home-block">
+            <div class="subtitle"></div>
+            <h1 class="tk-source-sans-pro"></h1>
+            <div class="home-content">
+                <div style="color: var(--project-color); font-size: 50px; font-weight: 700;text-align: left">
+                    <div style="display: flex; ">
+                        <img src="{% static 'frontend/images/amsterdam-logo.svg' %}"
+                             style="width: 43px;margin-right: 1rem;">
+                        <div>
+                            <div>City of</div>
+                            <div>Amsterdam</div>
+                            <div>G3W-SUITE</div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <p style="display: flex; align-items: center; gap: 0.5rem">
+                    <span>
+                        Powered by
+                    </span>
+                    <a href="http://gis3w.it">
+                        <img style="float:right;"
+                             src="{% static 'frontend/images/logo_gis3w.png' %}">
+                    </a>
+                </p>
+                <!--
+                 <form>
+                   <input type="search" name="s" placeholder="Search this site">
+                 </form>
+                 -->
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- SIDEBAR left -->
     {% include 'frontend/include/sidebar.html' %}
-  </div>
+</div>
