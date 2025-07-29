@@ -10,6 +10,7 @@ from core.models import Group, GeneralSuiteData, MacroGroup
 from core.mixins.views import AjaxableFormResponseMixin
 from .configs import home_images_default
 from collections import OrderedDict
+from constance import config
 import random
 import os
 import json
@@ -71,7 +72,8 @@ class FrontendView(TemplateView):
                                 'subtitle_color': '#fff'
                             },
                         )
-
+            if not home_images:
+                home_images = home_images_default
             return (default, home_images)
         else:
             return (True, home_images_default)
@@ -114,10 +116,11 @@ class FrontendView(TemplateView):
         # get data from generaldata
         cdata['generaldata'] = GeneralSuiteData.objects.get()
 
-        cdata['page_title'] = getattr(settings, 'G3WSUITE_CUSTOM_TITLE', 'G3W-SUITE')
+        cdata['page_title'] = config.CUSTOM_WEBSITE_TITLE
 
         # get home images data
         home_images = self.get_home_images()
+        print(home_images)
 
         if home_images[0]:
             cdata['home_image_path'] = '../../static/frontend/images/home/'
