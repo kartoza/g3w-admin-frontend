@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ page_title }}</title>
 {% if SETTINGS.G3WSUITE_CUSTOM_STATIC_URL and SETTINGS.G3WSUITE_FAVICON %}
-<link rel="icon" href="{% static SETTINGS.G3WSUITE_FAVICON %}">
+<link rel="icon" href="{{ SETTINGS.G3WSUITE_FAVICON }}">
 {% else %}
 <link rel="icon" href="{% static '/img/favicon.ico' %}">
 {% endif %}
