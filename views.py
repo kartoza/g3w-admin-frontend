@@ -120,7 +120,6 @@ class FrontendView(TemplateView):
 
         # get home images data
         home_images = self.get_home_images()
-        print(home_images)
 
         if home_images[0]:
             cdata['home_image_path'] = '../../static/frontend/images/home/'
